@@ -48,7 +48,8 @@ export enum FieldType {
 export enum Platform {
     Windows,
     MacOS,
-    Linux
+    Linux,
+    FreeBSD
 }
 
 export enum AgentHostedMode {
@@ -698,6 +699,7 @@ export function getPlatform(): Platform {
         case 'win32': return Platform.Windows;
         case 'darwin': return Platform.MacOS;
         case 'linux': return Platform.Linux;
+        case 'freebsd': return Platform.FreeBSD;
         default: throw Error(loc('LIB_PlatformNotSupported', process.platform));
     }
 }
